@@ -4,5 +4,7 @@
 
 1. archivo .env con las variables:
 
-   PORT
-   DATABASE
+   - PORT
+   - DATABASE
+
+2. Falta carpeta config:
