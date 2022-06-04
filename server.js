@@ -5,6 +5,7 @@ const morgan = require('morgan');
 const { readdirSync } = require('fs');
 const swaggerUI = require('swagger-ui-express');
 const swaggerJsdoc = require('swagger-jsdoc');
+// const userRoutes = require('./routes/user');
 require('dotenv').config();
 
 // app-server
@@ -20,7 +21,11 @@ app.use(express.json({ limit: "2mb" }));
 app.use(express.urlencoded({ extended: false }));  // quiere decir que solo con json
 app.use(cors());
 
-// routes middlewares-fs
+// routes middlewares-fs: option 1 (no optima)
+//app.use('/',userRoutes);
+
+// routes middlewares-fs: option 2 (optime)
+readdirSync('./routes').map( (r) => app.use('/api', require('./routes/' + r)));
 
 // port
 const port = process.env.PORT || 8000;
