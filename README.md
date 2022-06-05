@@ -8,3 +8,5 @@
    - DATABASE
 
 2. Falta carpeta config:
+
+   - fbServiceAccountKey.json // Archivo que contiene la configuracion del firebase admin
